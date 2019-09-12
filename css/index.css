@@ -1,3 +1,30 @@
+@keyframes moveSection {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -168,6 +195,12 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width:500px) {
+  .container {
+    background: #212529;
+    color: white;
+  }
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -200,6 +233,11 @@ nav .navDiv a {
   text-decoration: none;
   font-size: 1.4rem;
   color: black;
+}
+@media (max-width:500px) {
+  nav .navDiv a {
+    color: white;
+  }
 }
 nav .navDiv a:hover {
   text-decoration: underline;
@@ -260,10 +298,18 @@ img {
 .home .content-section .text-content {
   width: 48%;
   padding-right: 1%;
+  animation-name: moveSection;
+  animation-duration: 4s;
+  background-color: white;
+  position: relative;
 }
 @media (max-width:500px) {
   .home .content-section .text-content {
     width: 100%;
+    animation-name: moveSection;
+    animation-duration: 4s;
+    background-color: #212529;
+    position: relative;
   }
 }
 .home .content-section .img-content {
